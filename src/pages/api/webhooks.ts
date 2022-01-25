@@ -34,7 +34,7 @@ const relevantEvents = new Set([
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
     const buff = await buffer(req);
-    const secret = req.headers["stripe-signature"];
+    const secret = req.headers["stripe_signature_secret"];
 
     let event: Stripe.Event;
 
